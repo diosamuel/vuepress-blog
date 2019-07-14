@@ -6,12 +6,12 @@
 		<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am {{age}} years old. i like ngoding with NodeJS, TypeScript, Vue and Python</p>
 
 		<hr>
-		<div :href='link' v-for='(link, title) in list' class="post">
-			<h1>{{title}}</h1>
-			<p><em>lorem ipsum ipsum lorem</em></p>
-			<a  :href='link' class="button">read</a>
-			<br>
-			<hr>
+		<div class="blog" v-for='post in postingan' :class='theme'>
+			<div class="post">
+				<h1>{{post.title}}</h1>
+				<p>{{post.description}}</p>
+				<a :href='post.link'><button>read</button></a>
+			</div>
 		</div>
 	</div>
 </template>
@@ -20,10 +20,35 @@
 	export default{
 		data(){
 			return {
-				list:{
-					'Title':'post/post_1.html',
-					'Title 2':'post/post_2.html',
-					'Title 3':'#',
+				postingan:{
+					'post1':{
+						title:'Title 1',
+						description:`
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+						link:'post/post_1.html'
+					},
+					'post2':{
+						title:'Ahsiappp',
+						description:`
+							dongeng ahsiap`,
+						link:'/post/post_2.html'
+					},
+					'post3':{
+						title:'Title 2',
+						description:`
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+						link:'#'
+					}
 				},
 				age:''
 			}
@@ -42,24 +67,39 @@
 
 <style scoped>
 	a{color: black;}
-	.button{
-		background-color: #ffffff;
-		color:  #3385ff;
-		border:none;
+	.blog{
+		margin:5rem;
+		/*border:1px solid #afafaf;*/
 		padding: 10px;
-		border: #3385ff 1px solid;
-		display: block;
-		border-radius: 5px;
-		cursor: pointer;
+		border-radius: 10px;
+		box-shadow: 1px 10px 2rem #efefef
+	}
+	.blog .post{
+		padding: 2rem;
+	}
+	.blog .post:hover{
+		
+	}
+	.blog h1{
+		/*border-bottom: 1px solid #efefef*/
+	}
+	.blog button{
 		transition: 0.5s;
-		width: 10rem
+		font-size: 19px;
+		background-color: white;
+		color: black;
+		text-decoration: none;
+		padding: 10px;
+		width: 100%;
+		border:none;
+		cursor: pointer;
+		margin-top: 2em!important;
+		border-top:1px solid #efefef; 
+		/*box-shadow: 1px 10px 10px #efefef*/
 	}
-	.button:hover{
-		background-color:  #3385ff;
-		color: white
-	}
-	.post{
-		width: 100%
+	.blog button:hover{
+		transition: 0.5s;
+		opacity: 0.5
 	}
 	.jumbotron{
 		width: 100%;

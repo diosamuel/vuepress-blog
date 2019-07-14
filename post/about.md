@@ -9,10 +9,9 @@ title: About Me
 # Virdio Samuel
 `@Jvxript`
 
-> Tidur woy!, Besok Ngoding
+Hello all!, my name is Virdio Samuel, i like ngoding with NodeJS, TypeScript, Vue and Python. Nasi Goreng + Tempe Orek is my favourite food
 
-Ngoding, Reading Books, eat Nasi Goreng, Drawing.
-
+> Ora Ngoding Ora uWu
 
 [GitHub](http://github.com/diosamuel)
 [Instagram](http://instagram.com/dio6.9sam)
