@@ -3,7 +3,7 @@
 		<div class="jumbotron">
 			{{$page.frontmatter.title}}
 		</div>
-		<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am {{age}} years old. i like ngoding with NodeJS, TypeScript, Vue and Python</p>
+		<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am {{age||15}} years old. i like ngoding with NodeJS, TypeScript, Vue and Python</p>
 
 		<hr>
 		<div class="blog" v-for='post in postingan' :class='theme'>
@@ -12,6 +12,11 @@
 				<p>{{post.description}}</p>
 				<a :href='post.link'><button>read</button></a>
 			</div>
+		</div>
+		
+		<div class="footer">
+			<p>Virdio Samuel - {{new Date().getFullYear()}}</p>
+			<p>Bikinnya Pake <a href="https://vuepress.vuejs.org/">VuePress</a></p>
 		</div>
 	</div>
 </template>
@@ -103,5 +108,11 @@
 	.jumbotron{
 		width: 100%;
 		font-size: 50px
+	}
+
+	.footer{
+		margin-top: 2rem;
+		text-align: center;
+		font-size: 18px!important;
 	}
 </style>
