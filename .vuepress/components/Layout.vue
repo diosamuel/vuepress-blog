@@ -68,7 +68,6 @@
 <style scoped>
 	a{color: black;}
 	.blog{
-		margin:5rem;
 		/*border:1px solid #afafaf;*/
 		padding: 10px;
 		border-radius: 10px;
