@@ -1,12 +1,11 @@
 <template>
 	<div>
-		<div class="jumbotron">
-			{{$page.frontmatter.title}}
+		<div class="aboutme">
+			<h1>{{$page.frontmatter.title}}</h1>
+			<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am {{age||15}} years old. Suka baca buku + tidur kalo sempat</p>
 		</div>
-		<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am {{age||15}} years old. i like ngoding with NodeJS, TypeScript, Vue and Python</p>
 
-		<hr>
-		<div class="blog" v-for='post in postingan' :class='theme'>
+		<div class="blog" v-for='post in postingan'>
 			<div class="post">
 				<h1>{{post.title}}</h1>
 				<p>{{post.description}}</p>
@@ -20,6 +19,7 @@
 		</div>
 	</div>
 </template>
+
 <script>
 	import axios from 'axios'
 	export default{
@@ -27,39 +27,35 @@
 			return {
 				postingan:{
 					'post1':{
-						title:'Title 1',
+						title:'saya siapa',
 						description:`
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+							siapa saya, saya tidak tahu`,
 						link:'post/post_1.html'
 					},
 					'post2':{
-						title:'Ahsiappp',
+						title:'galeri',
 						description:`
-							dongeng ahsiap`,
-						link:'/post/post_2.html'
+						 galeri foto apa aja`,
+						 link:'/post/galeri.html'
 					},
 					'post3':{
-						title:'Title 2',
+						title:'Cerpen Mamank Garox',
 						description:`
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+							cerpen mamank garox`,
+						link:'/post/post_2.html'
+					},
+					'post4':{
+						title:'#anjay',
+						description:`
+							anjay mabar`,
 						link:'#'
-					}
+					},
 				},
 				age:''
 			}
 		},
 		created(){
-			axios.get('http://worldtimeapi.org/api/timezone/Asia/Jakarta')
+			axios.get('https://worldtimeapi.org/api/timezone/Asia/Jakarta')
 			.then(res=>{
 				this.age=res.data.datetime.split('-')[0]-2004
 			})
@@ -70,7 +66,14 @@
 	
 </script>
 
+<style>
+	.aboutme{
+		height: 50%;
+		padding: 5em;
+	}
+</style>
 <style scoped>
+*{transition: 0.4s}
 	a{color: black;}
 	.blog{
 		/*border:1px solid #afafaf;*/
@@ -81,8 +84,8 @@
 	.blog .post{
 		padding: 2rem;
 	}
-	.blog .post:hover{
-		
+	.blog:hover{
+		transform: translateY(-1rem);
 	}
 	.blog h1{
 		/*border-bottom: 1px solid #efefef*/

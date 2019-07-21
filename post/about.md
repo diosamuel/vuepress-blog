@@ -7,12 +7,11 @@ title: About Me
 ![jvx](../.vuepress/file/yc.jpg)
 
 # Virdio Samuel
-`@Jvxript`
 
-Hello all!, my name is Virdio Samuel, i like ngoding with NodeJS, TypeScript, Vue and Python. Nasi Goreng + Tempe Orek is my favourite food
+Progremer Node.JS, JS, Py, TS, Vue banyak.
+> enak ya Nasi Goreng
 
-> Ora Ngoding Ora uWu
-
-[GitHub](http://github.com/diosamuel)
-[Instagram](http://instagram.com/dio6.9sam)
-[Telegram](http://t.me/jvxcript)
+[GitHub](https://github.com/diosamuel)
+[Instagram](https://instagram.com/dio6.9sam)
+[Telegram](https://t.me/jvxcript)
+[Faceboook](https://facebook.com)
