@@ -7,5 +7,13 @@ module.exports={
 			{text:"Index", link:"/"},
 			{text:"About Me", link:"/post/about.html"},
 		]
-	}
+	},
+	plugins: [
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': 'UA-145829530-1' // UA-00000000-0
+      }
+    ]
+  ]
 }
