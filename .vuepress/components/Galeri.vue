@@ -15,18 +15,22 @@
 			<p class="desc">Nyan Nyan Cat</p>
 		</div>
 		<div class="foto">
-			<img src="https://services.lampungpro.id//fileload/1e1b6ea0-9af6-439e-8e8c-504174e9de26jpeg_XT8AQ.jpeg">
-			<div class="desc">
-				<p>Khoceng Oren</p>
-				<em>" ora barbar ora oren "</em>
-			</div>
+			<img src="../file/teman.jpg">
+			<p class="desc">Temen SMP yang bikin ane Sengsara :v</p>
 		</div>
 		<div class="foto">
-			<img src="../file/teman.jpg">
-			<p class="desc">Temen SMP yang bikin ane Sengsara</p>
+			<img src="../file/sip.jpg">
+			<p class="desc">luv</p>
 		</div>
-		
+		<div class="foto">
+			<img src="https://media.tenor.com/images/a9adda18a785b1cb85eec04517d99178/tenor.gif"/>
+			<p class="desc">Lu siapa asw</p>
+		</div>
+		<br>
+		<hr>
+		<p style="text-align: center;">Virdio Samuel - {{new Date().getFullYear()}}</p>
 	</div>
+	
 </template>
 
 <style scoped>

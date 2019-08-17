@@ -17,8 +17,6 @@
 		<h1>He married <b>Mamank Garox</b> and together they lived happily ever after</h1>
 
 		<br>
-		<img src="https://scontent-yyz1-1.cdninstagram.com/vp/9bee45204ff434d68e6ab0bc028981da/5D895F25/t51.2885-15/e35/41468628_161907581403533_4406290873397535247_n.jpg?_nc_ht=scontent-yyz1-1.cdninstagram.com&ig_cache_key=MTg3NzY3NTQ3MzkyOTE1MDMzMg%3D%3D.2">
-
 		<hr>
 		<div style="text-align: center;">
 			<p>Virdio Samuel - {{new Date().getFullYear()}}</p>

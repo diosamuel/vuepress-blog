@@ -2,7 +2,7 @@
 	<div>
 		<div class="aboutme">
 			<h1>{{$page.frontmatter.title}}</h1>
-			<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am {{age||15}} years old. Suka baca buku + tidur kalo sempat</p>
+			<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am {{age}} years old. Suka baca buku + tidur kalo gasalah</p>
 		</div>
 
 		<div class="blog" v-for='post in postingan'>
@@ -42,7 +42,7 @@
 						title:'Cerpen Mamank Garox',
 						description:`
 							cerpen mamank garox`,
-						link:'/post/post_2.html'
+						link:'/post/mamankgarox.html'
 					},
 					'post4':{
 						title:'#anjay',
@@ -57,7 +57,15 @@
 		created(){
 			axios.get('https://worldtimeapi.org/api/timezone/Asia/Jakarta')
 			.then(res=>{
-				this.age=res.data.datetime.split('-')[0]-2004
+				let time = res.data.datetime.split('-')
+				let isUltah = time[1]>=7
+				
+				if(isUltah){
+					this.age=time[0]-2004+1
+				}else{
+					this.age=time[0]-2004
+				}
+				
 			})
 			.catch(e=>console.log(e))
 		}

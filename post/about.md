@@ -15,3 +15,4 @@ Progremer Node.JS, JS, Py, TS, Vue banyak.
 [Instagram](https://instagram.com/dio6.9sam)
 [Telegram](https://t.me/jvxcript)
 [Faceboook](https://facebook.com)
+[Blog](https://diosamuel.github.io)
