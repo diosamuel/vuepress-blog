@@ -42,8 +42,9 @@
 		transition: 0.5s;
 		padding: 10px;
 		border-radius: 10px;
-		box-shadow: 1px 10px 2rem gray;
+		box-shadow: 1px 10px 2rem #f5f2eb;
 		margin-top:3rem;
+		background-color: white!important;
 	}
 	.foto .desc{
 		padding-bottom: 10px;
@@ -51,7 +52,7 @@
 	}
 	.foto img{
 		width:50rem;
-		height: 25%
+		height: 25%;
 	}
 </style>
 <script>

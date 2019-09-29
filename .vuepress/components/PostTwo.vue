@@ -23,3 +23,8 @@
 		</div>
 	</div>
 </template>
+
+<style scoped>
+	b:nth-child(odd){color: #3385ff}
+	b:nth-child(even){color:#ff5177;}
+</style>

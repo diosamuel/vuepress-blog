@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<div class="aboutme">
+		<div id="title">
 			<h1>{{$page.frontmatter.title}}</h1>
-			<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am {{age}} years old. Suka baca buku + tidur kalo gasalah</p>
+			<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am {{age?age:16}} years old. Suka baca buku + tidur kalo gasalah</p>
 		</div>
 
 		<div class="blog" v-for='post in postingan'>
@@ -74,10 +74,21 @@
 	
 </script>
 
-<style>
-	.aboutme{
+<style scoped>
+	#title{
 		height: 50%;
 		padding: 5em;
+		background-color: #3385ff;
+		border-radius: 8px;
+		color: white;
+		position: relative;
+		animation-name: toRight;
+		animation-duration: 1s;
+	}
+	#title a{color: white!important;}
+	@keyframes toRight{
+		0%{right: 5rem}
+		100%{right:0;}
 	}
 </style>
 <style scoped>
@@ -87,13 +98,14 @@
 		/*border:1px solid #afafaf;*/
 		padding: 10px;
 		border-radius: 10px;
-		box-shadow: 1px 10px 2rem #efefef
+		box-shadow: 1px 10px 2rem #efefef;
+		margin-top: 2rem;
 	}
 	.blog .post{
 		padding: 2rem;
 	}
 	.blog:hover{
-		transform: translateY(-1rem);
+		transform: translateY(1rem);
 	}
 	.blog h1{
 		/*border-bottom: 1px solid #efefef*/
@@ -116,6 +128,17 @@
 		transition: 0.5s;
 		opacity: 0.5
 	}
+
+	/*coloring*/
+	.blog:nth-child(odd){
+		background-color: #ffd1e2;
+		color: #444
+	}
+	.blog:nth-child(odd) button{
+		background:none;
+		color: #444
+	}
+
 	.jumbotron{
 		width: 100%;
 		font-size: 50px
