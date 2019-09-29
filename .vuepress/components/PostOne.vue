@@ -1,11 +1,11 @@
 <template>
 	<div>
 		<h1 class="animated pulse">Aloha!</h1>
-		<h3>virdio samuel saragih</h3>
-		<h3>usually call dio</h3>
+		<h3>Virdio Samuel Saragih</h3>
+		<h3>usually called dio</h3>
 		<h3>interesting in programming, chemistry, and art</h3>
 		<h3>nasi goreng</h3>
-		<h3>also tempe is delicious</h3>
+		<h3>tempe is also delicious</h3>
 		<h3>senior high school</h3>
 		<h3>love book</h3>
 
