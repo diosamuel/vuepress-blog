@@ -19,10 +19,6 @@
 			<p class="desc">Temen SMP yang bikin ane Sengsara :v</p>
 		</div>
 		<div class="foto">
-			<img src="../file/sip.jpg">
-			<p class="desc">luv</p>
-		</div>
-		<div class="foto">
 			<img src="https://media.tenor.com/images/a9adda18a785b1cb85eec04517d99178/tenor.gif"/>
 			<p class="desc">Lu siapa asw</p>
 		</div>
