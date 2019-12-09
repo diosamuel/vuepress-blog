@@ -4,4 +4,4 @@ title: About Me
 
 ---
 
-<PostOne/>
+<About/>

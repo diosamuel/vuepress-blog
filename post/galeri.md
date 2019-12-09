@@ -1,5 +1,5 @@
 ---
- title : Galeri
+ title : Galeri Foto
 ---
 
-<Galeri/>
+<galerifoto/>

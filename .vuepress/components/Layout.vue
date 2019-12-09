@@ -2,17 +2,16 @@
 	<div>
 		<div id="title">
 			<h1>{{$page.frontmatter.title}}</h1>
-			<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am {{age?age:16}} years old. Suka baca buku + tidur kalo gasalah</p>
+			<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am {{age?age:15}} years old. Suka baca buku + tidur kalo gasalah</p>
 		</div>
 
 		<div class="blog" v-for='post in postingan'>
 			<div class="post">
 				<h1>{{post.title}}</h1>
-				<p>{{post.description}}</p>
-				<a :href='post.link'><button>read</button></a>
+				<p v-html='post.description'></p>
+				<a :href='post.link' style="margin: 0 auto"><button>read</button></a>
 			</div>
 		</div>
-		
 		<div class="footer">
 			<p>Virdio Samuel - {{new Date().getFullYear()}}</p>
 			<p>Bikinnya Pake <a href="https://vuepress.vuejs.org/">VuePress</a></p>
@@ -30,7 +29,7 @@
 						title:'saya siapa',
 						description:`
 							siapa saya, saya tidak tahu`,
-						link:'post/post_1.html'
+						link:'post/about.html'
 					},
 					'post2':{
 						title:'galeri',
@@ -39,16 +38,16 @@
 						 link:'/post/galeri.html'
 					},
 					'post3':{
-						title:'Cerpen Mamank Garox',
+						title:'Hikayat Hang Joko',
 						description:`
-							cerpen mamank garox`,
-						link:'/post/mamankgarox.html'
+							gw bikin cerita, mana tau bermanfaat`,
+						link:'/post/hikayat.html'
 					},
 					'post4':{
-						title:'#anjay',
+						title:'#weliveinsociety',
 						description:`
-							anjay mabar`,
-						link:'#'
+							we think about society interaction`,
+						link:'#title'
 					},
 				},
 				age:''
@@ -78,7 +77,8 @@
 	#title{
 		height: 50%;
 		padding: 5em;
-		background-color: #3385ff;
+		background: rgb(255,155,247);
+		background: linear-gradient(322deg, rgba(255,155,247,1) 0%, rgba(64,127,249,1) 82%);
 		border-radius: 8px;
 		color: white;
 		position: relative;
@@ -91,8 +91,10 @@
 		100%{right:0;}
 	}
 </style>
+
+<!--umum-->
 <style scoped>
-*{transition: 0.4s}
+*{transition: 0.4s;scroll-behavior: smooth;font-family: Google Sans}
 	a{color: black;}
 	.blog{
 		/*border:1px solid #afafaf;*/
@@ -100,44 +102,54 @@
 		border-radius: 10px;
 		box-shadow: 1px 10px 2rem #efefef;
 		margin-top: 2rem;
+		padding: 2em;
 	}
 	.blog .post{
 		padding: 2rem;
 	}
 	.blog:hover{
-		transform: translateY(1rem);
+		
 	}
 	.blog h1{
 		/*border-bottom: 1px solid #efefef*/
 	}
 	.blog button{
 		transition: 0.5s;
+		border-radius: 8px;
 		font-size: 19px;
-		background-color: white;
-		color: black;
+		background: rgb(100,202,255);
+		background: linear-gradient(266deg, rgba(100,202,255,1) 0%, rgba(239,155,255,1) 100%);
+		color: white;
 		text-decoration: none;
 		padding: 10px;
-		width: 100%;
+		width: 30%;
 		border:none;
 		cursor: pointer;
 		margin-top: 2em!important;
-		border-top:1px solid #efefef; 
+		box-shadow: 10px 10px #333;
+		transform: translateX(200%);
 		/*box-shadow: 1px 10px 10px #efefef*/
 	}
 	.blog button:hover{
 		transition: 0.5s;
-		opacity: 0.5
+		box-shadow: -10px 10px #333
+	}
+	.blog button:active{
+		transition: 0.5s;
+		box-shadow: -1px 1px #333
 	}
 
 	/*coloring*/
 	.blog:nth-child(odd){
-		background-color: #ffd1e2;
-		color: #444
+		background: rgb(255,117,254);
+		background: linear-gradient(122deg, rgba(255,117,254,1) 0%, rgba(135,129,240,1) 65%, rgba(19,141,226,1) 100%);
+		color: white
 	}
 	.blog:nth-child(odd) button{
-		background:none;
-		color: #444
+		background: white;
+		color: black
 	}
+
 
 	.jumbotron{
 		width: 100%;
