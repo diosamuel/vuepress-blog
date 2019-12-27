@@ -4,4 +4,4 @@ title: About Me
 
 ---
 
-<About/>
+# Sebentar, lagi rusak

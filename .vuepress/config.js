@@ -1,6 +1,7 @@
-module.exports={
-	title:'Virdio Samuel',
-	description:'My Blog',
+module.exports = {
+	title:'Blog',
+	description:'Virdio Samuel Blog',
+	port:3000,
 	themeConfig:{
 		logo:'https://i.ibb.co/WB8qb49/69823.png',
 		nav:[

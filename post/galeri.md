@@ -1,5 +1,6 @@
 ---
  title : Galeri Foto
+ description : Kumpulan foto-foto
 ---
 
-<galerifoto/>
+# Sebentar, lagi rusak

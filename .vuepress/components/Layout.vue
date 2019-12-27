@@ -1,20 +1,22 @@
 <template>
 	<div>
-		<div id="title">
-			<h1>{{$page.frontmatter.title}}</h1>
-			<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am {{age?age:15}} years old. Suka baca buku + tidur kalo gasalah</p>
+		<div id="header">
+			<h1>Virdio's Blog</h1>
+			<p>Hello all!, my name is <a href="post/about.html">Virdio Samuel</a>, i am 15 years old. Suka baca buku + tidur kalo gasalah</p>
 		</div>
 
-		<div class="blog" v-for='post in postingan'>
-			<div class="post">
-				<h1>{{post.title}}</h1>
-				<p v-html='post.description'></p>
-				<a :href='post.link' style="margin: 0 auto"><button>read</button></a>
-			</div>
-		</div>
-		<div class="footer">
-			<p>Virdio Samuel - {{new Date().getFullYear()}}</p>
-			<p>Bikinnya Pake <a href="https://vuepress.vuejs.org/">VuePress</a></p>
+		<div class="blog" v-for='post in postingan' style="width: 100%">
+			<a :href="post.link">
+				<div class="post">
+					<img :src="post.img" v-if='post.img' class="img">
+					<div class="desc">
+						<h1>{{post.title}}</h1>
+						<p class="text-desc" v-html='post.description'></p>
+						<br>
+						<p style="color:gray;width:25%;letter-spacing: 5px;background: #fafafa;padding: 1em;border-radius: 8px;">{{post.category}}</p>
+					</div>
+				</div>
+			</a>
 		</div>
 	</div>
 </template>
@@ -26,47 +28,39 @@
 			return {
 				postingan:{
 					'post1':{
-						title:'saya siapa',
+						img:'https://i1.wp.com/wp.laravel-news.com/wp-content/uploads/2018/04/vuepress.png?resize=2200%2C1125',
+						title:'Membuat Simple Blog dengan Vuepress ',
 						description:`
-							siapa saya, saya tidak tahu`,
-						link:'post/about.html'
-					},
-					'post2':{
-						title:'galeri',
-						description:`
-						 galeri foto apa aja`,
-						 link:'/post/galeri.html'
+							Halo!, Kali ini kita akan membuat simple blog menggunakan Vuepress Static Site Generator..`,
+						category:'TUTORIAL',
+						link:'post/underproduction.html'
 					},
 					'post3':{
+						img:'https://cdn.idntimes.com/content-images/community/2017/03/scottish-fold-19f4e95a2d8b356157e6c7714a8add33_600x400.jpg',
 						title:'Hikayat Hang Joko',
 						description:`
 							gw bikin cerita, mana tau bermanfaat`,
+						category:'GABUT',
 						link:'/post/hikayat.html'
 					},
-					'post4':{
-						title:'#weliveinsociety',
+					'post2':{
+						img:'https://media.hitekno.com/thumbs/2019/10/24/96431-percakapan-imajiner-dua-kucing-gemas-twitterinuurl/350x230-img-96431-percakapan-imajiner-dua-kucing-gemas-twitterinuurl.jpg',
+						title:'Galeri',
 						description:`
-							we think about society interaction`,
-						link:'#title'
+						 galeri foto apa aja`,
+						category:'PERSONAL',
+						 link:'/post/galeri.html'
 					},
-				},
-				age:''
-			}
-		},
-		created(){
-			axios.get('https://worldtimeapi.org/api/timezone/Asia/Jakarta')
-			.then(res=>{
-				let time = res.data.datetime.split('-')
-				let isUltah = time[1]>=7
-				
-				if(isUltah){
-					this.age=time[0]-2004+1
-				}else{
-					this.age=time[0]-2004
+					'post5':{
+						img:'https://cdn2.feedme.id/media/post/small/54708-inilah-sosok-asli-nurhadi-aldo-tukang-pijat-dan-politikus-sungguhan.jpg',
+						title:'Tentang Saya',
+						description:`
+							Hi You, I luv luv u`,
+						category:'ABOUT',
+						link:'post/about.html'
+					}
 				}
-				
-			})
-			.catch(e=>console.log(e))
+			}
 		}
 	}
 
@@ -74,91 +68,44 @@
 </script>
 
 <style scoped>
-	#title{
-		height: 50%;
-		padding: 5em;
-		background: rgb(255,155,247);
-		background: linear-gradient(322deg, rgba(255,155,247,1) 0%, rgba(64,127,249,1) 82%);
-		border-radius: 8px;
-		color: white;
-		position: relative;
-		animation-name: toRight;
-		animation-duration: 1s;
-	}
-	#title a{color: white!important;}
-	@keyframes toRight{
-		0%{right: 5rem}
-		100%{right:0;}
-	}
-</style>
+/**/
+*{transition: 0.4s;scroll-behavior: smooth;font-family: Open Sans}
+a{text-decoration:none!important;color: #333}
+/**/
+#header{
+	padding: 4em
+}
 
-<!--umum-->
-<style scoped>
-*{transition: 0.4s;scroll-behavior: smooth;font-family: Google Sans}
-	a{color: black;}
-	.blog{
-		/*border:1px solid #afafaf;*/
-		padding: 10px;
-		border-radius: 10px;
-		box-shadow: 1px 10px 2rem #efefef;
-		margin-top: 2rem;
-		padding: 2em;
-	}
-	.blog .post{
-		padding: 2rem;
-	}
-	.blog:hover{
-		
-	}
-	.blog h1{
-		/*border-bottom: 1px solid #efefef*/
-	}
-	.blog button{
-		transition: 0.5s;
-		border-radius: 8px;
-		font-size: 19px;
-		background: rgb(100,202,255);
-		background: linear-gradient(266deg, rgba(100,202,255,1) 0%, rgba(239,155,255,1) 100%);
-		color: white;
-		text-decoration: none;
-		padding: 10px;
-		width: 30%;
-		border:none;
-		cursor: pointer;
-		margin-top: 2em!important;
-		box-shadow: 10px 10px #333;
-		transform: translateX(200%);
-		/*box-shadow: 1px 10px 10px #efefef*/
-	}
-	.blog button:hover{
-		transition: 0.5s;
-		box-shadow: -10px 10px #333
-	}
-	.blog button:active{
-		transition: 0.5s;
-		box-shadow: -1px 1px #333
-	}
+.desc{
+	padding: 4em;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	margin-top: -1em;
+	z-index: 1;
+}
 
-	/*coloring*/
-	.blog:nth-child(odd){
-		background: rgb(255,117,254);
-		background: linear-gradient(122deg, rgba(255,117,254,1) 0%, rgba(135,129,240,1) 65%, rgba(19,141,226,1) 100%);
-		color: white
-	}
-	.blog:nth-child(odd) button{
-		background: white;
-		color: black
-	}
+.desc .text-desc{
+	margin-left: 1em;
+	font-family: Google Sans;
+	border-left: 3px solid blue;
+	padding-left: 2em
+}
 
+.img{
+	text-align: center;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	width: 100%;
+	height:25%;
+}
 
-	.jumbotron{
-		width: 100%;
-		font-size: 50px
-	}
-
-	.footer{
-		margin-top: 2rem;
-		text-align: center;
-		font-size: 18px!important;
-	}
+.blog{
+	margin-top: 1em;
+	transform: scale(0.8);
+	border-radius: 8px;
+	box-shadow: 0 0 50px #dadada;
+}
+.blog:hover{
+	transform: scale(0.9);
+}
 </style>
