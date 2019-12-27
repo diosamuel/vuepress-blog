@@ -77,7 +77,7 @@ a{text-decoration:none!important;color: #333}
 }
 
 .desc{
-	padding: 4em;
+	padding: 1.5em;
 	border-bottom-left-radius: 8px;
 	border-bottom-right-radius: 8px;
 	margin-top: -1em;
@@ -88,7 +88,7 @@ a{text-decoration:none!important;color: #333}
 	margin-left: 1em;
 	font-family: Google Sans;
 	border-left: 3px solid blue;
-	padding-left: 2em
+	padding-left: 1em
 }
 
 .img{
