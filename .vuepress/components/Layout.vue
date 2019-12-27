@@ -87,7 +87,7 @@ a{text-decoration:none!important;color: #333}
 .desc .text-desc{
 	margin-left: 1em;
 	font-family: Google Sans;
-	border-left: 3px solid blue;
+	border-left: 3px solid turquoise;
 	padding-left: 1em
 }
 
